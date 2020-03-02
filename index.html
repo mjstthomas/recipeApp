@@ -8,7 +8,7 @@
 <body>
 <form id='recipeForm'>
 	<label for="ingredients">Ingredients you have:</label>
-	<input type="text" name="ingredients" placeholder="ingredients you have" required>
+	<input type="text" name="ingredients" id="ingredients" placeholder="ingredients you have" required>
 	<label for="cuisine">Couisine type?</label>
 	<select id="cuisine">
 		<option value="American">American</option>
@@ -21,12 +21,13 @@
 	</select>
 	<label for="diet">Diet</label>
 	<select id="diet">
-		<option value="balanced">Balanced</option>
-		<option value="high-fiber">High-Fiber</option>
-		<option value="high-protien">High-Protien</option>
-		<option value="low-carb">Low-Carb</option>
-		<option value="low-fat">Low-Fat</option>
-		<option value="low-sodium">Low-Sodium</option>
+		<option value=""></option>
+		<option value="ketogenic">Ketogenic</option>
+		<option value="Whole30">Whole30</option>
+		<option value="primal">Primal</option>
+		<option value="paleo">Paleo</option>
+		<option value="vegan">Vegan</option>
+		<option value="gluten-free">Gluten Free</option>
 	</select>
 	<button type="submit">Submit</button>
 </form>
