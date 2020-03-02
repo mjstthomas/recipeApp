@@ -1,38 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title></title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="description" content="Search for recipes with ingredients.">
+	<title>API Hack Project</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
-<form id='recipeForm'>
-	<label for="ingredients">Ingredients you have:</label>
-	<input type="text" name="ingredients" id="ingredients" placeholder="ingredients you have" required>
-	<label for="cuisine">Couisine type?</label>
-	<select id="cuisine">
-		<option value="American">American</option>
-		<option value="Chinese">Chinese</option>
-		<option value="Japanese">Japanese</option>
-		<option value="French">French</option>
-		<option value="Mexican">Mexican</option>
-		<option value="Italian">Italian</option>
-		<option value="Indian">Indian</option>
-	</select>
-	<label for="diet">Diet</label>
-	<select id="diet">
-		<option value=""></option>
-		<option value="ketogenic">Ketogenic</option>
-		<option value="Whole30">Whole30</option>
-		<option value="primal">Primal</option>
-		<option value="paleo">Paleo</option>
-		<option value="vegan">Vegan</option>
-		<option value="gluten-free">Gluten Free</option>
-	</select>
-	<button type="submit">Submit</button>
-</form>
-
-
-<script type="text/javascript" src="main.js"></script>
+	<header>
+		<!--Banner-->
+		<div class="logo">
+			<p>Quick Chef</p>
+		</div>
+	</header>
+		<!--Navigation-->
+		<div class="menu-toggler">
+			<div class="sideBar"></div>
+		</div>
+		<nav class="navBar hidden">
+			<form id='recipeForm' class="">
+				<label for="ingredients">Ingredients you have:</label>
+				<input type="text" id="ingredients" placeholder="ingredients you have">
+				<br>
+				<label for="cuisine">Cuisine type?</label>
+				<select id="cuisine">
+					<option value=""></option>
+					<option value="American">American</option>
+		      		<option value="Chinese">Chinese</option>
+				    <option value="Japanese">Japanese</option>
+				    <option value="French">French</option>
+				    <option value="Mexican">Mexican</option>
+				    <option value="Italian">Italian</option>
+				    <option value="Indian">Indian</option>
+				</select>
+				<br>
+				<label for="diet">Diet type?</label>
+				<select id="diet">
+					<option value=""></option>
+				    <option value="ketogenic">Ketogenic</option>
+				    <option value="Whole30">Whole30</option>
+				    <option value="primal">Primal</option>
+				    <option value="paleo">Paleo</option>
+				    <option value="vegan">Vegan</option>
+				    <option value="gluten-free">Gluten Free</option>
+				</select>
+				<br>
+				<button type="submit">Submit</button>
+			</form>
+		</nav>
+		<!--Intro Header-->
+		<div id="showcase">
+			<h1>Have ingredients but no recipe? We got you.</h1>
+			<button id="starter">Let's get cooking</button>
+		</div>
+	<script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>

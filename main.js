@@ -17,7 +17,15 @@ function submit(){
 	$('#recipeForm').submit(event => {
 		event.preventDefault();
 		getRecipes()
+		$('.navBar').addClass('shut')
+		$('#recipeForm').toggleClass('hidden')
 	})
 }
 
-$(submit)
+	$('#showcase').on('click', "#starter", event => {
+		$('#showcase').empty()
+		$(".navBar").removeClass('hidden')
+		console.log('hello')
+	})
+
+submit()
