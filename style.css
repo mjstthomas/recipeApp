@@ -21,6 +21,7 @@ html {
   top: 189px;
   background-color: #33FF87;
   border-radius: 25px;
+  transition: width .5s;
 }
 form{
 	text-align: right;
@@ -36,6 +37,8 @@ select{
 .shut{
 	width: 42px;
 }
+.open{
+        width: 422px;
 
 .logo {
   position: fixed;
