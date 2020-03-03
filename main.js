@@ -24,7 +24,8 @@ function submit(){
 
 	$('#showcase').on('click', "#starter", event => {
 		$('#showcase').empty()
-		$(".navBar").removeClass('hidden')
+		$(".navBar").toggleClass('shut')
+                $('.navBar').toggleClass('open')
 		console.log('hello')
 	})
 
