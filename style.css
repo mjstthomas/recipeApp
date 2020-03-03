@@ -21,7 +21,7 @@ html {
   top: 189px;
   background-color: #33FF87;
   border-radius: 25px;
-  transition: width .5s;
+  transition: width, 0.5s;
 }
 form{
 	text-align: right;
@@ -37,8 +37,20 @@ select{
 .shut{
 	width: 42px;
 }
+
 .open{
-        width: 422px;
+	width: 422px;
+}
+.slider{
+	width: 60px;
+	border: none;
+	background: none;
+	transform: rotate(270deg);
+	float: right;
+	margin-top: 50px;
+	margin-right: -20px;
+	font-weight: 700;
+}
 
 .logo {
   position: fixed;
