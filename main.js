@@ -17,16 +17,24 @@ function submit(){
 	$('#recipeForm').submit(event => {
 		event.preventDefault();
 		getRecipes()
-		$('.navBar').addClass('shut')
+		$('.navBar').toggleClass('shut')
+		$('.navBar').toggleClass('open')
 		$('#recipeForm').toggleClass('hidden')
 	})
 }
 
 	$('#showcase').on('click', "#starter", event => {
 		$('#showcase').empty()
-		$(".navBar").toggleClass('shut')
-                $('.navBar').toggleClass('open')
+		$(".navBar").removeClass('hidden')
 		console.log('hello')
 	})
+
+	$('.slider').on('click', event => {
+		$('.navBar').toggleClass('open')
+		$('.navBar').toggleClass('shut')
+		$('#recipeForm').toggleClass('hidden')
+	})
+
+
 
 submit()
