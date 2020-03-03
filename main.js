@@ -37,4 +37,8 @@ function submit(){
 
 
 
+<<<<<<< HEAD
 submit()
+=======
+submit()
+>>>>>>> 117b52f9bcdaab9259d3e0c6437079950c79395b
