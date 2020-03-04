@@ -28,7 +28,7 @@ function submit(){
 		$('#instructions').removeClass('hidden')
 		$('footer').removeClass('hidden')
 		emptyDisp()
-		// getRecipes()
+		getRecipes()
 		formReset()
 	})
 }
