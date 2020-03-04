@@ -27,7 +27,7 @@
 		<nav class="navBar open hidden">
 			<form id='recipeForm' class="">
 				<label for="ingredients">Ingredients you have:</label>
-				<input type="text" id="ingredients" placeholder="ingredients you have">
+				<input type="text" id="ingredientsSelect" placeholder="ingredients you have">
 				<br>
 				<label for="cuisine">Cuisine type?</label>
 				<select id="cuisine">
@@ -61,6 +61,19 @@
 			<h1>Have ingredients but no recipe? We got you.</h1>
 			<button id="starter">Let's get cooking</button>
 		</div>
+		<section class="hidden" id="title"></section>
+		<section class="topSec">
+			<section class="hidden" id="image"></section>
+			<section class="hidden" id="ingredients">
+				<h5>Ingredients:</h5>
+				<ol class="ingredientList"></ol>
+			</section>
+		</section>
+		<section class="hidden" id="instructions">
+			<h5>Instructions:</h5>
+			<ol class="instructList"></ol>
+		</section>
+		<footer class="hidden" id="link"></footer>
 	<script type="text/javascript" src="main.js"></script>
 </body>
 

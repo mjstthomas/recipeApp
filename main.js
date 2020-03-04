@@ -1,25 +1,34 @@
 console.log('connected')
 
+
 function getRecipes(){
 	let api_key = '849d4e84cfcd41858d9dda42ac775fb2';
 	let cuisine = $('#cuisine').val();
 	let diet = $('#diet').val();
-	let enteredIngredients =  $('#ingredients').val();
+	let enteredIngredients =  $('#ingredientsSelect').val();
 	let ingredientsArr = enteredIngredients.split(' ');
-	let ingredients = ingredientsArr.join('')
+	let ingredients = ingredientsArr.join('');
 	fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${ingredients}&fillIngredients=true&cuisine=${cuisine}&diet=${diet}&instructionsRequired=true&addRecipeInformation=true&apiKey=${api_key}`)
 	.then(response => response.json())
-	.then(responseJson => console.log(responseJson))
+	.then(responseJson => {
+		console.log(responseJson)
+		renderRecipe(responseJson)
+	})
 	.catch(error => console.log(error))
 }
 
 function submit(){
 	$('#recipeForm').submit(event => {
 		event.preventDefault();
-		getRecipes()
 		$('.navBar').toggleClass('shut')
 		$('.navBar').toggleClass('open')
 		$('#recipeForm').toggleClass('hidden')
+		$('#title').removeClass('hidden')
+		$('#image').removeClass('hidden')
+		$('#ingredients').removeClass('hidden')
+		$('#instructions').removeClass('hidden')
+		$('footer').removeClass('hidden')
+		getRecipes()
 	})
 }
 
@@ -36,9 +45,64 @@ function submit(){
 	})
 
 
+function renderRecipe(obj){
+	let rand = Math.floor(Math.random()*10);
+	//print rcipe title
+	$('#title').append(`<h2>${obj.results[rand].title}</h2>`);
+	//print recipe image
+	$('#image').append(`<img src="${obj.results[rand].image}" alt="recipe Image">`);
+	//print used ingredients
+	for (let i = 0; i < obj.results[rand].usedIngredients.length; i++){
+		$('#ingredients').find('ol').append(`<li>${obj.results[rand].usedIngredients[i].original}</li>`)
+	}
+	for (let i = 0; i < obj.results[rand].missedIngredients.length; i++){
+		$('#ingredients').find('ol').append(`<li>${obj.results[rand].missedIngredients[i].original}</li>`)
+	}
+	// print instruction
+	for (let i = 0; i < obj.results[rand].analyzedInstructions[0].steps.length; i++){
+		$('#instructions').find('ol').append(`<li>${obj.results[rand].analyzedInstructions[0].steps[i].step}</li>`)
+	}
+	// print url
+	$('footer').append(`<a href=${obj.results[rand].sourceUrl}`)
+}
 
-<<<<<<< HEAD
+
+
+
+
+
+
+// function renderImg()
+
+
+
+
+
+
+// function renderIng()
+
+
+
+
+
+// function renderInst()
+
+
+
+
+
+
+// function renderNutri()
+
+
+
+
+// function renderFooter()
+
+
+
+
+
+
 submit()
-=======
-submit()
->>>>>>> 117b52f9bcdaab9259d3e0c6437079950c79395b
+
