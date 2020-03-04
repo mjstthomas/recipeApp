@@ -24,11 +24,12 @@ function submit(){
 		$('.navBar').toggleClass('open')
 		$('#recipeForm').toggleClass('hidden')
 		$('#title').removeClass('hidden')
-		$('#image').removeClass('hidden')
-		$('#ingredients').removeClass('hidden')
+		$('.topSec').removeClass('hidden')
 		$('#instructions').removeClass('hidden')
 		$('footer').removeClass('hidden')
-		getRecipes()
+		emptyDisp()
+		// getRecipes()
+		formReset()
 	})
 }
 
@@ -46,7 +47,7 @@ function submit(){
 
 
 function renderRecipe(obj){
-	let rand = Math.floor(Math.random()*10);
+	let rand = Math.floor(Math.random()*obj.length);
 	//print rcipe title
 	$('#title').append(`<h2>${obj.results[rand].title}</h2>`);
 	//print recipe image
@@ -67,41 +68,18 @@ function renderRecipe(obj){
 }
 
 
+function emptyDisp(){
+	$('#title').empty()
+	$('#image').empty()
+	$('#ingredients').empty()
+	$('#instructions').empty()
+}
 
-
-
-
-
-// function renderImg()
-
-
-
-
-
-
-// function renderIng()
-
-
-
-
-
-// function renderInst()
-
-
-
-
-
-
-// function renderNutri()
-
-
-
-
-// function renderFooter()
-
-
-
-
+function formReset(){
+	$('#ingredientsSelect').val('')
+	$('#cuisine').val('')
+	$('#diet').val('')
+}
 
 
 submit()
