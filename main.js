@@ -15,11 +15,13 @@ function getRecipes(){
 		renderRecipe(responseJson)
 	})
 	.catch(error => console.log(error))
+	formReset()
 }
 
 function submit(){
 	$('#recipeForm').submit(event => {
 		event.preventDefault();
+		emptyDisp()
 		$('.navBar').toggleClass('shut')
 		$('.navBar').toggleClass('open')
 		$('#recipeForm').toggleClass('hidden')
@@ -27,9 +29,6 @@ function submit(){
 		$('.topSec').removeClass('hidden')
 		$('#instructions').removeClass('hidden')
 		$('footer').removeClass('hidden')
-		emptyDisp()
-		getRecipes()
-		formReset()
 	})
 }
 
@@ -47,7 +46,7 @@ function submit(){
 
 
 function renderRecipe(obj){
-	let rand = Math.floor(Math.random()*obj.length);
+	let rand = Math.floor(Math.random()*obj.results.length);
 	//print rcipe title
 	$('#title').append(`<h2>${obj.results[rand].title}</h2>`);
 	//print recipe image
@@ -69,10 +68,11 @@ function renderRecipe(obj){
 
 
 function emptyDisp(){
-	$('#title').empty()
-	$('#image').empty()
-	$('#ingredients').empty()
-	$('#instructions').empty()
+	$('#title').replaceWith('<section class="" id="title"></section>')
+	$('#image').replaceWith('<section class="" id="image"></section>')
+	$('#ingredients').replaceWith('<section class="" id="ingredients"><h3>Ingredients:</h3><ol class="ingredientList"></ol></section>')
+	$('#instructions').replaceWith('<section class="hidden" id="instructions"><h3>Instructions:</h3><ol class="instructList"></ol></section>')
+	getRecipes()
 }
 
 function formReset(){
