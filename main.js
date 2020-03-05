@@ -1,18 +1,27 @@
 console.log('connected')
 
+const ingSearchString = str => {
+    let arr = str.replace(/(,\s*)+/, ',');
+    let newArr = arr.split(" ");
+    let lastArr = newArr.join(',');
+    console.log(lastArr)
+    return lastArr;
+}
 
 function getRecipes(){
 	let api_key = '849d4e84cfcd41858d9dda42ac775fb2';
 	let cuisine = $('#cuisine').val();
 	let diet = $('#diet').val();
 	let enteredIngredients =  $('#ingredientsSelect').val();
-	let ingredientsArr = enteredIngredients.split(' ');
-	let ingredients = ingredientsArr.join('');
+	let ingredients = ingSearchString(enteredIngredients);
 	fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${ingredients}&fillIngredients=true&cuisine=${cuisine}&diet=${diet}&instructionsRequired=true&addRecipeInformation=true&apiKey=${api_key}`)
 	.then(response => response.json())
 	.then(responseJson => {
-		console.log(responseJson)
-		renderRecipe(responseJson)
+		if (responseJson.totalResults === 0){
+			alert("Oops!  No results found.  Try Again")
+		} else {
+			renderRecipe(responseJson)
+		}
 	})
 	.catch(error => console.log(error))
 	formReset()
