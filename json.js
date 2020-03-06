@@ -2080,5 +2080,5 @@ const testResponseJson = {
     ],
     "offset": 0,
     "number": 10,
-    "totalResults": 139
+    "totalResults": 0
 }

@@ -2,6 +2,8 @@ console.log('connected')
 
 const ingSearchString = str => {
     let arr = str.replace(/(,\s*)+/, ',');
+    arr = arr.replace(/(and\s*)+/, "");
+    console.log(arr)
     let newArr = arr.split(" ");
     let lastArr = newArr.join(',');
     console.log(lastArr)
@@ -18,7 +20,7 @@ function getRecipes(){
 	.then(response => response.json())
 	.then(responseJson => {
 		if (responseJson.totalResults === 0){
-			alert("Oops!  No results found.  Try Again")
+			noResults()
 		} else {
 			renderRecipe(responseJson)
 		}
@@ -34,6 +36,7 @@ function submit(){
 		$('.navBar').toggleClass('shut')
 		$('.navBar').toggleClass('open')
 		$('#recipeForm').toggleClass('hidden')
+		$('nav p').toggleClass('hidden')
 		$('#title').removeClass('hidden')
 		$('.topSec').removeClass('hidden')
 		$('#instructions').removeClass('hidden')
@@ -51,8 +54,20 @@ function submit(){
 		$('.navBar').toggleClass('open')
 		$('.navBar').toggleClass('shut')
 		$('#recipeForm').toggleClass('hidden')
+		$('nav p').toggleClass('hidden')
 	})
 
+	$('#retry').on('click', event => {
+		$('.navBar').toggleClass('shut')
+		$('.navBar').toggleClass('open')
+		$('#recipeForm').toggleClass('hidden')
+		$('nav p').toggleClass('hidden')
+		$('#title').removeClass('hidden')
+		$('.topSec').removeClass('hidden')
+		$('#instructions').removeClass('hidden')
+		$('footer').removeClass('hidden')
+		$('.oops').toggleClass('hidden')
+	})
 
 function renderRecipe(obj){
 	let rand = Math.floor(Math.random()*obj.results.length);
@@ -68,9 +83,12 @@ function renderRecipe(obj){
 		$('#ingredients').find('ol').append(`<li>${obj.results[rand].missedIngredients[i].original}</li>`)
 	}
 	// print instruction
-	for (let i = 0; i < obj.results[rand].analyzedInstructions[0].steps.length; i++){
-		$('#instructions').find('ol').append(`<li>${obj.results[rand].analyzedInstructions[0].steps[i].step}</li>`)
-	}
+	// for (let i = 0; i < obj.results[rand].analyzedInstructions[0].steps.length; i++){
+	// 	$('#instructions').find('ol').append(`<li>${obj.results[rand].analyzedInstructions[0].steps[i].step}</li>`)
+	// }
+	obj.results[rand].analyzedInstructions[0].steps.forEach(obj => {
+		$('#instructions').append(`<li>${obj.step}</li>`)
+	})
 	// print url
 	$('footer').append(`<a href=${obj.results[rand].sourceUrl}`)
 }
@@ -79,7 +97,7 @@ function renderRecipe(obj){
 function emptyDisp(){
 	$('#title').replaceWith('<section class="" id="title"></section>')
 	$('#image').replaceWith('<section class="" id="image"></section>')
-	$('#ingredients').replaceWith('<section class="" id="ingredients"><h3>Ingredients:</h3><ol class="ingredientList"></ol></section>')
+	$('#ingredients').replaceWith('<section class="hidden" id="ingredients"><h3>Ingredients:</h3><ol class="ingredientList"></ol></section>')
 	$('#instructions').replaceWith('<section class="hidden" id="instructions"><h3>Instructions:</h3><ol class="instructList"></ol></section>')
 	getRecipes()
 }
@@ -90,6 +108,8 @@ function formReset(){
 	$('#diet').val('')
 }
 
-
+function noResults(){
+	$('.oops').toggleClass('hidden')
+}
 submit()
 

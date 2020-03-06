@@ -11,12 +11,17 @@ html {
 	width: 100%;
 	height: 100%;
 }
+
+.favicon{
+	height: 10px;
+	width: 10px;
+}
 .hidden{
   display: none;
 }
 .navBar {
 	position: fixed;
-	width: 422px;
+	width: 250px;
 	height: 477px;  left: -22px;
 	top: 189px;
 	background-color: #33FF87;
@@ -24,23 +29,31 @@ html {
 	transition: width, 0.5s;
 	color: #2a2b2a;
 }
+.navBar p{
+	margin-left: 27px;
+}
 form{
 	text-align: right;
 	margin-top: 30px;
 	margin-right: 20px;
 }
-input{
-	margin-top: 15px
+.option{
+	font-size: 12px;
+}
+#ingredientsSelect{
+	margin-top: 5px;
+	margin-bottom: 20px;
 }
 select{
-	margin-top: 15px;
+	margin-top: 5px;
+	margin-bottom: 20px;
 }
 .shut{
 	width: 50px;
 }
 
 .open{
-	width: 422px;
+	width: 250px;
 }
 .slider{
 	width: 60px;
@@ -64,11 +77,23 @@ select{
 	color: #fcd2cf;
 	font-size: 64px;
 	padding: 1rem;
+	padding-left: 0;
+	padding-bottom: 20px;
+}
+
+.logoImg{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 50px;
+	margin-top: 30px;
+	margin-left: 20px;
 }
 
 .logo p{
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 #showcase h1 {
@@ -160,4 +185,43 @@ footer{
     width: 341px;
     height: 38px;
     top: 763px;
+}
+
+.oops{
+	position: fixed;
+	top: 130px;
+	left: 50px;
+	min-height: 300px;
+	width: 400px;
+	align-items: center;
+	color: white;
+	padding: 0 20px;
+	background-color: #2a2b2a;
+	border: 2px solid #b30c00;
+	border-radius: 25%;
+}
+.oops h1{
+	font-size: 3.5rem;
+	margin-top: 170px;
+	font-family: 'Comfortaa', sans-serif;
+	font-weight: 700;
+	color: white;
+	padding: 1rem;
+	user-select: none;
+	text-align: center;
+	margin-bottom: 0;
+	margin-top: 40px;
+}
+#retry{
+	font-size: 1rem;
+	color: #2a2b2a;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), #B40C00;
+	border: white solid 1px;
+	font-weight: 600;
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin-top: 1rem;
+	transition: background-color 650ms;
+	margin-left: 150px;
+	margin-right: 175px;
 }

@@ -5,9 +5,16 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<meta name="description" content="Search for recipes with ingredients.">
-	<title>API Hack Project</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="description" content="Search for recipes with ingredients.">
+	<title>Quick Chef</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="manifest" href="./site.webmanifest">
+	<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -17,6 +24,7 @@
 	<header>
 		<!--Banner-->
 		<div class="logo">
+			<img class="logoImg" src="./images/logo.png">
 			<p>Quick Chef</p>
 		</div>
 	</header>
@@ -26,10 +34,10 @@
 		</div> -->
  		<nav class="navBar open hidden">
 			<form id='recipeForm' class="">
-				<label for="ingredients">Ingredients you have:</label>
+				<label for="ingredients">Ingredients you have:</label><br>
 				<input type="text" id="ingredientsSelect" placeholder="ingredients you have">
 				<br>
-				<label for="cuisine">Cuisine type?</label>
+				<label for="cuisine">Cuisine type?<span class="option">(optional)</span></label><br>
 				<select id="cuisine">
 					<option value=""></option>
 					<option value="American">American</option>
@@ -41,7 +49,7 @@
 				    <option value="Indian">Indian</option>
 				</select>
 				<br>
-				<label for="diet">Diet type?</label>
+				<label for="diet">Diet type?<span class="option">(optional)</span></label><br>
 				<select id="diet">
 					<option value=""></option>
 				    <option value="ketogenic">Ketogenic</option>
@@ -55,6 +63,7 @@
 				<button type="submit">Submit</button>
 			</form>
 			<button class="slider">Slide</button>
+			<p>Let us find you a recipe based on which ingredients and any preferences you may have!</p>
 		</nav>
 		<!--Intro Header-->
 		<div id="showcase">
@@ -73,6 +82,10 @@
 		<section class="hidden" id="instructions">
 			<h3>Instructions:</h3>
 			<ol class="instructList"></ol>
+		</section>
+		<section class="oops hidden">
+			<h1>Opps! Looks like there isn't a recipe for that.</h1>
+			<button id="retry">Retry?</button>
 		</section>
 		<footer class="hidden" id="link"></footer>
 	<script type="text/javascript" src="main.js"></script>
