@@ -10,7 +10,9 @@ const ingSearchString = str => {
 function getRecipes(){
 	let api_key = '849d4e84cfcd41858d9dda42ac775fb2';
 	let cuisine = $('#cuisine').val();
+	console.log(cuisine)
 	let diet = $('#diet').val();
+	console.log(diet)
 	let enteredIngredients =  $('#ingredientsSelect').val();
 	let ingredients = ingSearchString(enteredIngredients);
 	fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${ingredients}&fillIngredients=true&cuisine=${cuisine}&diet=${diet}&instructionsRequired=true&addRecipeInformation=true&apiKey=${api_key}`)
