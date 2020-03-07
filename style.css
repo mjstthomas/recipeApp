@@ -262,5 +262,8 @@ footer{
 	.open{
 		height: 100px;
 	}
+	#title{
+		padding-top: 30px;
+	}
 
 }
