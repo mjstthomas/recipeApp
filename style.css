@@ -257,12 +257,17 @@ footer{
 		height: 70%;
 	}
 	.slider{
-		display: none;
+		transform: none;
+		margin-top: 0;
+		margin-right: 15px;
 	}
 	form button{
 		margin-top: 3px;
 		color: #fcd2cf;
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), #B40C00;
+	}
+	.open{
+		height: 100px;
 	}
 
 }
