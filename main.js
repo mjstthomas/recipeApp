@@ -1,12 +1,9 @@
-console.log('connected')
 
 const ingSearchString = str => {
     let arr = str.replace(/(,\s*)+/, ',');
     arr = arr.replace(/(and\s*)+/, "");
-    console.log(arr)
     let newArr = arr.split(" ");
     let lastArr = newArr.join(',');
-    console.log(lastArr)
     return lastArr;
 }
 
@@ -47,7 +44,6 @@ function submit(){
 	$('#showcase').on('click', "#starter", event => {
 		$('#showcase').empty()
 		$(".navBar").removeClass('hidden')
-		console.log('hello')
 	})
 
 	$('.slider').on('click', event => {
@@ -82,10 +78,7 @@ function renderRecipe(obj){
 	for (let i = 0; i < obj.results[rand].missedIngredients.length; i++){
 		$('#ingredients').find('ol').append(`<li>${obj.results[rand].missedIngredients[i].original}</li>`)
 	}
-	// print instruction
-	// for (let i = 0; i < obj.results[rand].analyzedInstructions[0].steps.length; i++){
-	// 	$('#instructions').find('ol').append(`<li>${obj.results[rand].analyzedInstructions[0].steps[i].step}</li>`)
-	// }
+
 	obj.results[rand].analyzedInstructions[0].steps.forEach(obj => {
 		$('#instructions').append(`<li>${obj.step}</li>`)
 	})
