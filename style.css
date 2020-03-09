@@ -233,11 +233,22 @@ footer{
 	background-color: #fbb124;
 	border-radius: 25px;
 	transition: width 1.0s, height .5s;
+	overflow: auto;
 }
 
 .shoppingList{
-	height: 600px;
-	width: 300px;
+	min-height: 600px;
+	min-width: 300px;
+}
+.nutContainer{
+	min-width: 0;
+	min-height: 0;
+	margin: 10px;
+	padding: 10px;
+	background-color: #2a2b2a;
+	border-radius: 25px;
+	transition: width 1.0s, height .5s;
+
 }
 .cart{
 	height: 50px;

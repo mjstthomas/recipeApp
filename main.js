@@ -1,7 +1,7 @@
 
 //create an object to store data from recipe for shopping api
-const ingredientsLister = {
-	missedIngredients: []
+const ingredientsObject = {
+	id: ""
 };
 
 const ingSearchString = str => {
@@ -37,7 +37,7 @@ function getRecipes(){
 function submit(){
 	$('#recipeForm').submit(event => {
 		event.preventDefault();
-		ingredientsLister.missedIngredients = [];
+		nutritionInformation.id = "";
 		emptyDisp()
 		$('.navBar').toggleClass('shut')
 		$('.navBar').toggleClass('open')
@@ -47,6 +47,7 @@ function submit(){
 		$('.topSec').removeClass('hidden')
 		$('#instructions').removeClass('hidden')
 		$('footer').removeClass('hidden')
+		$('#shopping').removeClass('hidden')
 	})
 }
 //Event listeners for the slider, start, and retry buttons
@@ -97,10 +98,7 @@ function renderRecipe(obj){
 	$('footer').append(`<a href=${obj.results[rand].sourceUrl}`)
 
 	//fill array with missed ingredients
-		obj.results[rand].missedIngredients.forEach(name => {
-			ingredientsLister.missedIngredients.push(name.name)
-			console.log(ingredientsLister)
-		})
+	return	ingredientsObject.id = obj.results[rand].id
 }
 
 
@@ -129,41 +127,60 @@ function noResults(){
 
 //listen for click on shopping cart to grow shopping section and fix remove hidden class from ul
 $('.cart').on('click', event=> {
-	$('.shopping').toggleClass('shoppingList')
-	$('.shopper').toggleClass('hidden')
-	$('.shopper').empty()
-	listMissedIngredients(ingredientsLister)
+	if ($('.shopping').hasClass('shoppingList')){
+		$('.nutContainer').empty().toggleClass('hidden')
+		$('.shopping').toggleClass('shoppingList')
+	} else {
+		$('.shopping').toggleClass('shoppingList')
+		$('.nutContainer').toggleClass('hidden')
+		nutritionInformation(ingredientsObject)
+	}
 })
 
 //fetch each item in missedIngredients array
-function listMissedIngredients(obj){
-	for (let i = 0; i < obj.missedIngredients.length; i++){
-		let foodString = obj.missedIngredents[i].split(" ").join("%20")
-		fetch(`https://google-shopping.p.rapidapi.com/search?language=EN&keywords=${foodString}&country=US`, {
-		"method": "GET",
-		"headers": {
-			"x-rapidapi-host": "google-shopping.p.rapidapi.com",
-			"x-rapidapi-key": "d253257eddmshc83c0e4eacc6000p1d5b98jsn5bb91cdbab01"
-			}
-		})
-		.then(response => response.json())
-		.then(responseJson => {
-			listRender(responseJson)
-		})
-		.catch(err => {
-			console.log(err);
-		});
+// function listMissedIngredients(obj){
+// 	for (let i = 0; i < obj.missedIngredients.length; i++){
+// 		let foodString = obj.missedIngredients[i].split(" ").join("%20")
+// 		fetch(`https://google-shopping.p.rapidapi.com/search?language=EN&keywords=${foodString}&country=US`, {
+// 		"method": "GET",
+// 		"headers": {
+// 			"x-rapidapi-host": "google-shopping.p.rapidapi.com",
+// 			"x-rapidapi-key": "d253257eddmshc83c0e4eacc6000p1d5b98jsn5bb91cdbab01"
+// 			}
+// 		})
+// 		.then(response => response.json())
+// 		.then(responseJson => {
+// 			listRender(responseJson)
+// 		})
+// 		.catch(err => {
+// 			console.log(err);
+// 		});
+// 		}
+// 	}
+
+
+//list nutriction Information
+function nutritionInformation(obj){
+	let api_key = '849d4e84cfcd41858d9dda42ac775fb2';
+	fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${obj.id}/nutritionWidget?defaultCss=true`, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+		"x-rapidapi-key": "d253257eddmshc83c0e4eacc6000p1d5b98jsn5bb91cdbab01",
+		"accept": "text/html"
 		}
-	}
-//print each missed ingredient to the list
-function listRender(arr){
-	let i = 0;
-	if (obj.i.price >= 10){
-		i++
-	} else {
-		$('.shopper').append(`<li>${obj.i.title} ${obj.i.currency}${obj.i.price}</li>`)
-	}
+	})
+	.then(response => response.text())
+	.then(responseText => {
+		console.log(responseText)
+		$('.nutContainer').html(`${responseText}`)
+	})
+	.catch(err => {
+		console.log(err);
+	});
 }
+//print each missed ingredient to the list
+
 
 
 submit()
