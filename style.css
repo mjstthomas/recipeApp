@@ -223,6 +223,32 @@ footer{
 	margin-right: 175px;
 }
 
+.shopping{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 50px;
+	width: 60px;
+	height: 60px;
+	background-color: #fbb124;
+	border-radius: 25px;
+	transition: width 1.0s, height .5s;
+}
+
+.shoppingList{
+	height: 600px;
+	width: 300px;
+}
+.cart{
+	height: 50px;
+	width: 50px;
+	margin: 5px;
+}
+.shopper{
+	color: #2a2b2a;
+	font-size: 24px;
+}
+
 @media screen and (min-width: 720px){
 	.navBar{
 		position: fixed;
@@ -264,6 +290,14 @@ footer{
 	}
 	#title{
 		padding-top: 30px;
+	}
+	.shopping{
+		margin-right: -10px;
+		height: 400px;
+
+	}
+	.shoppingList{
+		height: 400px;
 	}
 
 }
