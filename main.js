@@ -129,9 +129,9 @@ function noResults(){
 $('.cart').on('click', event=> {
 	if ($('.shopping').hasClass('shoppingList')){
 		$('.nutContainer').empty().toggleClass('hidden')
-		$('.shopping').toggleClass('shoppingList')
+		$('.shopping').toggleClass('shoppingList').toggleClass('zeroBottom')
 	} else {
-		$('.shopping').toggleClass('shoppingList')
+		$('.shopping').toggleClass('shoppingList').toggleClass('zeroBottom')
 		$('.nutContainer').toggleClass('hidden')
 		nutritionInformation(ingredientsObject)
 	}

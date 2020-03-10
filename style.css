@@ -250,6 +250,11 @@ footer{
 	transition: width 1.0s, height .5s;
 
 }
+.zeroBottom{
+	margin-bottom: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
 .cart{
 	height: 50px;
 	width: 50px;
