@@ -23,9 +23,11 @@ function getRecipes(){
 	fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${ingredients}&fillIngredients=true&cuisine=${cuisine}&diet=${diet}&instructionsRequired=true&addRecipeInformation=true&apiKey=${api_key}`)
 	.then(response => response.json())
 	.then(responseJson => {
-		if (responseJson.totalResults === 0){
+		if (responseJson.results.length === 0){
 			noResults()
+			console.log(responseJson)
 		} else {
+			console.log(responseJson)
 			renderRecipe(responseJson)
 		}
 	})
@@ -70,9 +72,9 @@ function submit(){
 		$('.navBar').toggleClass('open')
 		$('#recipeForm').toggleClass('hidden')
 		$('nav p').toggleClass('hidden')
-		$('#title').removeClass('hidden')
-		$('.topSec').removeClass('hidden')
-		$('#instructions').removeClass('hidden')
+		$('#title').toggleClass('hidden')
+		$('.topSec').toggleClass('hidden')
+		$('#instructions').toggleClass('hidden')
 		$('footer').removeClass('hidden')
 		$('.oops').toggleClass('hidden')
 	})
