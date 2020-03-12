@@ -2,6 +2,10 @@ Quick Chef
 
 https://mjstthomas.github.io/recipeApp/
 
+Summary
+
+When you have food in the fridge but don't know what to make, Quick Chef will randomly render a recipe that includes those ingredients for you.  It takes the guess work out of dinner.  It even allows you to choose cuisine type or a diet that you are following.  To supplement the diet minded, there is a seperate call that adds a nutritional information widget to a second screen that can be opened with the tap of the nutrition icon.
+
 screenshots
 
 ![image](https://user-images.githubusercontent.com/53156193/76509126-c07ca200-640c-11ea-9f2b-b65f2d565dc7.png)
@@ -22,9 +26,6 @@ error screen
 ![image](https://user-images.githubusercontent.com/53156193/76510731-544f6d80-640f-11ea-8cfe-c9c41ef74fc5.png)
 Nutritional information screen
 
-Summary
-
-When you have food in the fridge but don't know what to make, Quick Chef will randomly render a recipe that includes those ingredients for you.  It takes the guess work out of dinner.  It even allows you to choose cuisine type or a diet that you are following.  To supplement the diet minded, there is a seperate call that adds a nutritional information widget to a second screen that can be opened with the tap of the nutrition icon.
 
 Technologies
 
