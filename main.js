@@ -3,6 +3,7 @@
 const ingredientsObject = {
 	id: ""
 };
+// function for string manipulation to allow the recipe call to function with different forms of typing out ingredients
 
 const ingSearchString = str => {
     let arr = str.replace(/(,\s*)+/, ',');
@@ -79,6 +80,8 @@ function submit(){
 		$('.oops').toggleClass('hidden')
 	})
 
+//functions for rendering page
+
 function renderRecipe(obj){
 	let rand = Math.floor(Math.random()*obj.results.length);
 	//print rcipe title
@@ -130,6 +133,8 @@ function noResults(){
 //listen for click on shopping cart to grow shopping section and fix remove hidden class from ul
 $('.cart').on('click', event=> {
 	if ($('.shopping').hasClass('shoppingList')){
+		let theId = event.currentTarget.id
+		console.log(theId)
 		$('.nutContainer').empty().toggleClass('hidden')
 		$('.shopping').toggleClass('shoppingList').toggleClass('zeroBottom')
 	} else {
@@ -138,27 +143,6 @@ $('.cart').on('click', event=> {
 		nutritionInformation(ingredientsObject)
 	}
 })
-
-//fetch each item in missedIngredients array
-// function listMissedIngredients(obj){
-// 	for (let i = 0; i < obj.missedIngredients.length; i++){
-// 		let foodString = obj.missedIngredients[i].split(" ").join("%20")
-// 		fetch(`https://google-shopping.p.rapidapi.com/search?language=EN&keywords=${foodString}&country=US`, {
-// 		"method": "GET",
-// 		"headers": {
-// 			"x-rapidapi-host": "google-shopping.p.rapidapi.com",
-// 			"x-rapidapi-key": "d253257eddmshc83c0e4eacc6000p1d5b98jsn5bb91cdbab01"
-// 			}
-// 		})
-// 		.then(response => response.json())
-// 		.then(responseJson => {
-// 			listRender(responseJson)
-// 		})
-// 		.catch(err => {
-// 			console.log(err);
-// 		});
-// 		}
-// 	}
 
 
 //list nutriction Information
@@ -185,5 +169,5 @@ function nutritionInformation(obj){
 
 
 
-submit()
+$(submit)
 

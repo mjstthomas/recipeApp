@@ -25,7 +25,7 @@
 	<header>
 		<!--Banner-->
 		<div class="logo">
-			<img class="logoImg" src="./images/logo.png" alt="quick chef image">
+			<img class="logoImg" src="./images/Group18.svg" alt="quick chef image">
 			<p>Quick Chef</p>
 		</div>
 	</header>
@@ -63,7 +63,7 @@
 				<br>
 				<button type="submit">Submit</button>
 			</form>
-			<button class="slider">Slide</button>
+			<button class="slider">Search</button>
 			<section class="description">
 				<p>Let us find you a recipe based on which ingredients and any preferences you may have!</p>
 			</section>
@@ -73,14 +73,14 @@
 			<h1>Have ingredients but no recipe? We got you.</h1>
 			<button id="starter">Let's get cooking</button>
 		</div> 
-		<section class="" id="title"></section>
-		<section class="topSec hidden">
+		<section class="" id="title"><h2></h2></section>
+		<div class="topSec hidden">
 			<section class="" id="image"></section>
 			<section class="" id="ingredients">
 				<h3>Ingredients:</h3>
 				<ol class="ingredientList"></ol>
 			</section>
-		</section>
+		</div>
 		<br>
 		<section class="hidden" id="instructions">
 			<h3>Instructions:</h3>
@@ -90,9 +90,9 @@
 			<h1>Oops! Looks like there isn't a recipe for that.</h1>
 			<button id="retry">Retry?</button>
 		</section>
-		<section class= "shopping hidden" id="shopping"><img src="./images/nutri.png" class = "cart">
-			<section class ="nutContainer hidden"></section>
-		</section>
+		<div class= "shopping hidden" id="shopping"><img src="./images/nutri.png" class = "cart" alt="nutrition icon">
+			<div class ="nutContainer hidden"></div>
+		</div>
 		<footer class="hidden" id="link"></footer>
 	<script type="text/javascript" src="main.js"></script>
 </body>
