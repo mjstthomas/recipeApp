@@ -8,22 +8,24 @@ When you have food in the fridge but don't know what to make, Quick Chef will ra
 
 screenshots
 
-![image](https://user-images.githubusercontent.com/53156193/76509126-c07ca200-640c-11ea-9f2b-b65f2d565dc7.png)
+![image](https://user-images.githubusercontent.com/53156193/76735640-8f5ce400-6722-11ea-9266-d1ee3825c0cd.png)
+
 home screen
 
-![image](https://user-images.githubusercontent.com/53156193/76509199-ddb17080-640c-11ea-9434-5b8677c57838.png)
+![image](https://user-images.githubusercontent.com/53156193/76735687-b0bdd000-6722-11ea-805d-b10d9db30d7b.png)
 nav bar large screen
 
-![image](https://user-images.githubusercontent.com/53156193/76509257-f752b800-640c-11ea-975d-13604dff1068.png)
+![image](https://user-images.githubusercontent.com/53156193/76735729-c6cb9080-6722-11ea-819e-62613ea9cd01.png)
+
 nav bar mobile
 
-![image](https://user-images.githubusercontent.com/53156193/76509331-13eef000-640d-11ea-976e-e48f67403845.png)
+![image](https://user-images.githubusercontent.com/53156193/76735763-de0a7e00-6722-11ea-82e3-69af57073cfd.png)
 results screen
 
-![image](https://user-images.githubusercontent.com/53156193/76509374-2cf7a100-640d-11ea-9772-08ef89db1de7.png)
+![image](https://user-images.githubusercontent.com/53156193/76735799-f5496b80-6722-11ea-8f0f-959144bcb077.png)
 error screen
 
-![image](https://user-images.githubusercontent.com/53156193/76510731-544f6d80-640f-11ea-8cfe-c9c41ef74fc5.png)
+![image](https://user-images.githubusercontent.com/53156193/76735852-0b572c00-6723-11ea-8510-9ada459c4bf1.png)
 Nutritional information screen
 
 
